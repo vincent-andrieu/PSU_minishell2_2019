@@ -7,9 +7,8 @@
 
 #include "mysh.h"
 
-int main(int argc, char **argv, char **env)
+int main(__attribute((unused))int argc, __attribute((unused))char **argv,
+        char **env)
 {
-    argc++;
-    argv++;
     return mysh(env);
 }
