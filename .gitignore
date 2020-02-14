@@ -14,3 +14,4 @@ unit_tests
 bootstrap.c
 mysh
 test_bash.sh
+tests/my_segfault
