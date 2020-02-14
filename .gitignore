@@ -1,0 +1,16 @@
+*.o
+a.out
+*~
+\#*#
+libmy.a
+libgraph.a
+*.gcda
+*.gcno
+vgcore.*
+test.c
+test
+*.sublime-*
+unit_tests
+bootstrap.c
+mysh
+test_bash.sh
