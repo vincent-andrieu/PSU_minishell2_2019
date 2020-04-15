@@ -28,6 +28,7 @@ typedef struct cd_flags_s
 
 int mysh(char **env);
 int interpretor(char **argv, char ***env, int exit_value);
+int choose_cmd_type(char **argv, char ***env, int exit_value);
 bool is_term_exist(char **env);
 int get_argc(char **argv);
 char **env_dup(char **env, int more);

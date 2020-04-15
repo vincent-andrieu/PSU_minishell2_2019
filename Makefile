@@ -35,6 +35,7 @@ LIGHT_CYAN      =       "\e[96m"
 SRC =   src/main.c	\
 		src/mysh.c	\
 		src/interpretor.c	\
+		src/commands/command.c	\
 		src/environnment.c	\
 		src/commands/my_cd.c	\
 		src/commands/cd_errors.c	\
