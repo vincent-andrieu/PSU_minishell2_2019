@@ -39,6 +39,9 @@ int my_setenv(char **argv, char ***env);
 int my_unsetenv(char **argv, char ***env);
 char *add_name_equal(char *name);
 int edit_env(char **var, char *name);
+int cmd_to_argv(char *cmd, char ***env, int exit_value);
+int split_semicolons(char ***env, int exit_value);
+char *get_cmd(void);
 
 #endif
 

@@ -5,43 +5,17 @@
 ## project makefile
 ##
 
-ECHO    =       /bin/echo -e
-DEFAULT =       "\033[00m"
-#SHELL  =       "\e[0;0m"
-
-DEFAULT =       "\e[0m"
-BOLD    =       "\e[1m"
-DIM     =       "\e[2m"
-UNDLN   =       "\e[4m"
-SHINE   =       "\e[5;37m"
-RODE    =       "\e[9;37m"
-
-BLACK   =       "\e[30m"
-RED     =       "\e[31m"
-GREEN   =       "\e[32m"
-YELLOW  =       "\e[33m"
-BLUE    =       "\e[34m"
-MAGEN   =       "\e[35m"
-CYAN    =       "\e[36m"
-WHITE   =       "\e[1;37m"
-
-LIGHT_RED       =       "\e[91m"
-LIGHT_GREEN     =       "\e[92m"
-LIGHT_YELLOW    =       "\e[93m"
-LIGHT_BLUE      =       "\e[94m"
-LIGHT_MAGEN     =       "\e[95m"
-LIGHT_CYAN      =       "\e[96m"
-
-SRC =   src/main.c	\
-		src/mysh.c	\
-		src/interpretor.c	\
-		src/commands/command.c	\
-		src/environnment.c	\
-		src/commands/my_cd.c	\
+SRC =   src/main.c					\
+		src/mysh.c					\
+		src/interpretor.c			\
+		src/semicolons.c			\
+		src/commands/command.c		\
+		src/environnment.c			\
+		src/commands/my_cd.c		\
 		src/commands/cd_errors.c	\
 		src/commands/errors_msg.c	\
-		src/commands/my_exit.c	\
-		src/commands/my_env.c	\
+		src/commands/my_exit.c		\
+		src/commands/my_env.c		\
 		src/commands/my_setenv.c	\
 		src/commands/my_unsetenv.c
 
@@ -107,3 +81,31 @@ free: re
 		@gcc -c -o $@ $^ $(CFLAGS) && $(ECHO) -n $(BOLD) $(GREEN)"  [OK] "$(WHITE) || $(ECHO) -n $(BOLD) $(RED)"  [KO] "$(WHITE) && $(ECHO) $(BOLD) $< | rev | cut -d'/' -f 1 | rev
 
 .PHONY: all clean fclean
+
+
+ECHO    =       /bin/echo -e
+DEFAULT =       "\033[00m"
+#SHELL  =       "\e[0;0m"
+
+DEFAULT =       "\e[0m"
+BOLD    =       "\e[1m"
+DIM     =       "\e[2m"
+UNDLN   =       "\e[4m"
+SHINE   =       "\e[5;37m"
+RODE    =       "\e[9;37m"
+
+BLACK   =       "\e[30m"
+RED     =       "\e[31m"
+GREEN   =       "\e[32m"
+YELLOW  =       "\e[33m"
+BLUE    =       "\e[34m"
+MAGEN   =       "\e[35m"
+CYAN    =       "\e[36m"
+WHITE   =       "\e[1;37m"
+
+LIGHT_RED       =       "\e[91m"
+LIGHT_GREEN     =       "\e[92m"
+LIGHT_YELLOW    =       "\e[93m"
+LIGHT_BLUE      =       "\e[94m"
+LIGHT_MAGEN     =       "\e[95m"
+LIGHT_CYAN      =       "\e[96m"
