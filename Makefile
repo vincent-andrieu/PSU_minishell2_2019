@@ -7,12 +7,12 @@
 
 SRC =   src/main.c						\
 		src/mysh.c						\
+		src/commands/command.c			\
 		src/interpretor.c				\
 		src/semicolons.c				\
 		src/redirections/parser.c		\
 		src/redirections/errors.c		\
 		src/redirections/error_msg.c	\
-		src/commands/command.c			\
 		src/environnment.c				\
 		src/commands/my_cd.c			\
 		src/commands/cd_errors.c		\
