@@ -8,10 +8,11 @@
 #include "my.h"
 #include "mysh.h"
 
-void put_command_not_found(char *cmd)
+int put_command_not_found(char *cmd)
 {
     my_put_error_str(cmd);
     my_put_error_str(": Command not found.\n");
+    return EXIT_ERROR;
 }
 
 void put_permission_denied(char *path)

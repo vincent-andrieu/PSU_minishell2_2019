@@ -42,16 +42,26 @@ int edit_env(char **var, char *name);
 int cmd_to_argv(char *cmd, char ***env, int exit_value);
 int split_semicolons(char ***env, int exit_value);
 char *get_cmd(void);
+void free_tab(char **tab);
+int parser(char ***env, int exit_value, char *cmd);
 
 #endif
 
 #ifndef ERRORS_H_
 #define ERRORS_H_
 
+//mysh1
 int check_cd_errors(char **argv, char *path);
 void put_permission_denied(char *path);
 void put_too_many_args(char *cmd);
 void put_error_unalphanum(char *cmd, char *str);
-void put_command_not_found(char *cmd);
+int put_command_not_found(char *cmd);
+
+//mysh2
+int manage_parser_errors(char **parsed, int *size);
+int ambiguous_error(void);
+int is_dir_error(char *path);
+int missing_redirect_error(void);
+int null_command_error(void);
 
 #endif

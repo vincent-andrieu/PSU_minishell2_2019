@@ -36,7 +36,7 @@ int split_semicolons(char ***env, int exit_value)
     free(cmd);
     for (int i = 0; commands[i] != NULL; i++)
         if (!is_only_spaces(commands[i]))
-            exit_value = cmd_to_argv(commands[i], env, exit_value);
-    free(commands);
+            exit_value = parser(env, exit_value, commands[i]);
+    free_tab(commands);
     return exit_value;
 }

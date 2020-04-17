@@ -24,6 +24,13 @@ static void put_prefix_command(void)
     }
 }
 
+void free_tab(char **tab)
+{
+    for (int i = 0; tab[i] != NULL; i++)
+        free(tab[i]);
+    free(tab);
+}
+
 char *get_cmd(void)
 {
     char *cmd = NULL;

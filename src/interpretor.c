@@ -19,7 +19,6 @@ int cmd_to_argv(char *cmd, char ***env, int exit_value)
 {
     char **argv = my_str_to_array(cmd, " \t", false);
 
-    free(cmd);
     if (argv == NULL)
         return exit_value;
     exit_value = interpretor(argv, env, exit_value);
