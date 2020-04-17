@@ -46,7 +46,6 @@ clean:
 			make clean -C $$MAKE_PATH -s ; \
 		done
 		@rm -f $(OBJ)
-		@mr_clean
 		@($(ECHO) $(BOLD) $(GREEN)✓$(LIGHT_BLUE)" CLEAN "$(DEFAULT))
 
 fclean: clean
@@ -55,7 +54,6 @@ fclean: clean
 		done
 		@rm -f $(OBJ)
 		@rm -f $(NAME)
-		@mr_clean
 		@($(ECHO) $(BOLD) $(GREEN)✓$(LIGHT_BLUE)" FCLEAN "$(DEFAULT))
 
 re: fclean all
