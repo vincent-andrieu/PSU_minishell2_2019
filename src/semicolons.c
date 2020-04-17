@@ -24,7 +24,6 @@ int split_semicolons(char ***env, int exit_value)
     if (cmd != NULL && cmd[0] == '\0')
         return exit_value;
     else if (commands == NULL) {
-        exit(0);
         free(cmd);
         my_cd(NULL, NULL);
         for (int i = 0; (*env)[i]; free((*env)[i]), i++);
