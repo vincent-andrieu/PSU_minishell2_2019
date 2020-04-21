@@ -49,8 +49,8 @@ char **my_str_to_func_array(char const *str,
                         bool keep_splits);
 char *my_strdup(char const *src);
 char *my_strndup(char const *src, int n);
+char *my_strdupcat(int argc, ...);
 int my_show_word_array(char * const *tab);
 char *my_convert_base(char const *nbr, int base1, int base2);
-char *get_next_line(int fd);
 
 #endif
