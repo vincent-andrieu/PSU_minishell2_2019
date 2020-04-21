@@ -32,8 +32,9 @@ int manage_parser_errors(char **parsed, int *size)
         if ((*size == 1 && !my_strcmp(parsed[1], str[i])) || *size == 2
         || (*size == 3 && !my_strcmp(parsed[2], str[i])))
             return missing_redirect_error();
-        if ((*size > 4 && !my_strcmp(parsed[2], str[i]))
-        || (*size > 3 && my_strcmp(parsed[2], str[i])))
+        if ((*size > 4 && my_strcmp(parsed[2], str[i]))
+        || (*size > 3 && my_strcmp(parsed[2], str[i])
+        && !my_strcmp(parsed[3], str[i])))
             return ambiguous_error();
     }
     if (is_dir(parsed[*size - 1]))

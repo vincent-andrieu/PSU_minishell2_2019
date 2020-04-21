@@ -13,6 +13,7 @@ SRC =   src/main.c						\
 		src/redirections/parser.c		\
 		src/redirections/errors.c		\
 		src/redirections/error_msg.c	\
+		src/redirections/double_left.c	\
 		src/environnment.c				\
 		src/commands/my_cd.c			\
 		src/commands/cd_errors.c		\
