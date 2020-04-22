@@ -43,7 +43,7 @@ int cmd_to_argv(char *cmd, char ***env, int exit_value);
 int split_semicolons(char ***env, int exit_value);
 char *get_cmd(void);
 void free_tab(char **tab);
-int parser(char ***env, int exit_value, char *cmd);
+int redirections_parser(char ***env, int exit_value, char *cmd);
 int do_double_left_redirect(char ***env, int exit_value, char **parsed);
 char *clear_redirect_path(char *path);
 

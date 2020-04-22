@@ -72,7 +72,7 @@ char *clear_redirect_path(char *path)
     return path;
 }
 
-int parser(char ***env, int exit_value, char *cmd)
+int redirections_parser(char ***env, int exit_value, char *cmd)
 {
     char **parsed = my_str_to_array(cmd, "<>", true);
 
