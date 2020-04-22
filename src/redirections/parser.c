@@ -76,6 +76,8 @@ int redirections_parser(char ***env, int exit_value, char *cmd)
 {
     char **parsed = my_str_to_array(cmd, "<>", true);
 
+    if (parsed == NULL)
+        return EXIT_ERROR;
     exit_value = manage_cmd_type(cmd, env, exit_value, parsed);
     free_tab(parsed);
     return exit_value;
