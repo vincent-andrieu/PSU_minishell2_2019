@@ -26,6 +26,8 @@ static void put_prefix_command(void)
 
 void free_tab(char **tab)
 {
+    if (tab == NULL)
+        return;
     for (int i = 0; tab[i] != NULL; i++)
         free(tab[i]);
     free(tab);
