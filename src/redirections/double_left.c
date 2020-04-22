@@ -35,7 +35,7 @@ int do_double_left_redirect(char ***env, int exit_value, char **parsed)
     int fildes[2];
     int temp_dup = dup(0);
 
-    if (!cmd || temp_dup == -1 || pipe(fildes) || dup2(fildes[0], 0)
+    if (!cmd || temp_dup == -1 || pipe(fildes) || dup2(fildes[0], 0) == -1
     || write(fildes[1], output, my_strlen(output)) == -1
     || close(fildes[1]) == -1) {
         free(cmd);
