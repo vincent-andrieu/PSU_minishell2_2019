@@ -12,7 +12,7 @@
 static bool is_dir(char *path)
 {
     struct stat st;
-    
+
     if (stat(path, &st) == -1)
         return false;
     return S_ISDIR(st.st_mode);
