@@ -30,7 +30,7 @@ NAME    =   mysh
 CFLAGS  +=  -I include -Wall -Wextra
 LDFLAGS +=  -L lib/my -lmy
 
-TEST = @gcc -o unit_tests src/interpretor.c src/environnment.c src/commands/my_cd.c src/commands/cd_errors.c src/commands/errors_msg.c src/commands/my_exit.c src/commands/my_env.c src/commands/my_setenv.c src/commands/my_unsetenv.c tests/tests_mysh_env.c tests/tests_mysh_setenv.c tests/tests_mysh_unsetenv.c tests/tests_mysh_exit.c tests/tests_mysh_cd.c tests/tests_mysh.c $(LDFLAGS) $(CFLAGS) --coverage -lcriterion
+TEST = @gcc -o unit_tests src/mysh.c src/redirections/parser.c src/redirections/errors.c src/redirections/error_msg.c src/redirections/double_left.c src/semicolons.c src/interpretor.c src/environnment.c src/commands/command.c src/commands/my_cd.c src/commands/cd_errors.c src/commands/errors_msg.c src/commands/my_exit.c src/commands/my_env.c src/commands/my_setenv.c src/commands/my_unsetenv.c tests/tests_mysh_env.c tests/tests_mysh_setenv.c tests/tests_mysh_unsetenv.c tests/tests_mysh_exit.c tests/tests_mysh_cd.c tests/tests_mysh.c tests/tests_mysh_two.c $(LDFLAGS) $(CFLAGS) --coverage -lcriterion
 
 all:    $(NAME)
 
