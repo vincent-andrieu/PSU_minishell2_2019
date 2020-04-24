@@ -13,8 +13,9 @@ static bool is_dir(char *path)
 {
     struct stat st;
 
-    if (stat(path, &st) == -1)
+    if (stat(clear_redirect_path(path), &st) == -1)
         return false;
+    free(path);
     return S_ISDIR(st.st_mode);
 }
 
@@ -37,7 +38,7 @@ int manage_parser_errors(char **parsed, int *size)
         && !my_strcmp(parsed[3], str[i])))
             return ambiguous_error();
     }
-    if (is_dir(parsed[*size - 1]))
+    if (is_dir(my_strdup(parsed[*size - 1])))
         return is_dir_error(parsed[*size - 1]);
     return EXIT_SUCCESS;
 }
