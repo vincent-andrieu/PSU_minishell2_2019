@@ -8,7 +8,7 @@
 #include "my.h"
 #include "mysh.h"
 
-int interpretor(char **argv, char ***env, int exit_value)
+static int interpretor(char **argv, char ***env, int exit_value)
 {
     if (get_argc(argv) <= 0)
         return exit_value;

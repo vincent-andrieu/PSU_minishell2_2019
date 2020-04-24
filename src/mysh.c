@@ -64,7 +64,7 @@ int mysh(char **env)
     signal(SIGQUIT, SIG_IGN);
     while (exit_value != EXIT_ERROR) {
         put_prefix_command();
-        exit_value = split_semicolons(&env, exit_value);
+        exit_value = split_semicolons(&env, exit_value, get_cmd());
     }
     for (int i = 0; env[i]; free(env[i]), i++);
     free(env);

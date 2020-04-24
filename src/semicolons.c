@@ -16,9 +16,16 @@ static bool is_only_spaces(char const *str)
     return true;
 }
 
-int split_semicolons(char ***env, int exit_value)
+static int travel_commands(char **commands, char ***env, int exit_value)
 {
-    char *cmd = get_cmd();
+    for (int i = 0; commands[i] != NULL; i++)
+        if (!is_only_spaces(commands[i]))
+            exit_value = redirections_parser(env, exit_value, commands[i]);
+    return exit_value;
+}
+
+int split_semicolons(char ***env, int exit_value, char *cmd)
+{
     char **commands = my_str_to_array(cmd, ";", false);
 
     if (cmd != NULL && cmd[0] == '\0')
@@ -26,16 +33,16 @@ int split_semicolons(char ***env, int exit_value)
     else if (commands == NULL) {
         free(cmd);
         my_cd(NULL, NULL);
-        for (int i = 0; (*env)[i]; free((*env)[i]), i++);
-        free(*env);
+        if (env != NULL) {
+            for (int i = 0; (*env)[i]; free((*env)[i]), i++);
+            free(*env);
+        }
         if (isatty(0))
             my_putstr("exit\n");
         exit(exit_value);
     }
     free(cmd);
-    for (int i = 0; commands[i] != NULL; i++)
-        if (!is_only_spaces(commands[i]))
-            exit_value = redirections_parser(env, exit_value, commands[i]);
+    exit_value = travel_commands(commands, env, exit_value);
     free_tab(commands);
     return exit_value;
 }

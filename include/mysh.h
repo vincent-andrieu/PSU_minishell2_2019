@@ -28,7 +28,6 @@ typedef struct cd_flags_s
 
 int mysh(char **env);
 int choose_cmd_type(char **argv, char ***env, int exit_value);
-int interpretor(char **argv, char ***env, int exit_value);
 bool is_term_exist(char **env);
 int get_argc(char **argv);
 char **env_dup(char **env, int more);
@@ -40,7 +39,7 @@ int my_unsetenv(char **argv, char ***env);
 char *add_name_equal(char *name);
 int edit_env(char **var, char *name);
 int cmd_to_argv(char *cmd, char ***env, int exit_value);
-int split_semicolons(char ***env, int exit_value);
+int split_semicolons(char ***env, int exit_value, char *cmd);
 char *get_cmd(void);
 void free_tab(char **tab);
 int redirections_parser(char ***env, int exit_value, char *cmd);
